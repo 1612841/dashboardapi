@@ -3,7 +3,8 @@ const app = express();
 const mongoose = require("mongoose");
 const dotenv = require("dotenv");
 const listRoute = require('./routes/lists');
-const cors = require("cors")
+const cors = require("cors");
+const port = 8800;
 
 dotenv.config();
 
@@ -19,6 +20,6 @@ app.use(cors());
 
 app.use("/api/lists", listRoute);
 
-app.listen(process.env.PORT || 8800, () => {
+app.listen(process.env.PORT || port, () => {
     console.log("Backend server is running!");
 });
